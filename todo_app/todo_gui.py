@@ -460,12 +460,11 @@ class TodoGUI:
                         }
                         color = priority_colors.get(todo.get('priority', 'normal'))
                     
-                    # 添加事件标记
+                    # 修改这里的调用，移除category参数
                     self.month_calendar.calevent_create(
-                        date,
-                        todo['content'],
-                        todo.get('category', '默认'),
-                        color
+                        date,          # 日期
+                        todo['content'],  # 事件文本
+                        color         # 颜色
                     )
                 except ValueError:
                     continue
